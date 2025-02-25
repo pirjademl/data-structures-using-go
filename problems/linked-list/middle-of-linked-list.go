@@ -2,7 +2,10 @@ package linkedlist
 
 import "math"
 
-func middleOfLinkedList(head *Node) *Node {
+func middleOfLinkedListBruteForce(head *Node) *Node {
+	if head == nil {
+		return nil
+	}
 	curr := head
 	total := 0
 	for curr != nil {
@@ -27,5 +30,13 @@ func middleOfLinkedList(head *Node) *Node {
 
 	}
 	return head
-
+}
+func MiddleOfLinkedListTortoiseMethod(head *Node) *Node {
+	slow := head
+	fast := head
+	for fast != nil && fast.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
+	}
+	return slow
 }
