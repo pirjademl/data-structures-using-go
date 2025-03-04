@@ -11,7 +11,7 @@ func StartingPointOfLoop(head *Node) *Node {
 		fast = fast.Next.Next
 		if slow == fast {
 			slow = head
-			for slow == fast {
+			for slow != fast {
 				slow = slow.Next
 				fast = fast.Next
 			}
