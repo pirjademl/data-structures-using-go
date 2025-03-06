@@ -1,6 +1,6 @@
 package linkedlist
 
-func SeggregateOddAndEven(head *Node) *Node {
+func SeggregateOddAndEvenBruteForce(head *Node) *Node {
 	if head == nil || head.Next == nil {
 		return head
 	}
@@ -27,4 +27,21 @@ func SeggregateOddAndEven(head *Node) *Node {
 		curr = curr.Next
 	}
 	return head
+}
+func SeggregateOddAndEvenOptimalAproach(head *Node) *Node {
+	if head == nil || head.Next == nil {
+		return head
+	}
+	evenHead := head.Next
+	odd := head
+	even := head.Next
+	for even != nil {
+		odd.Next = odd.Next.Next
+		even.Next = even.Next.Next
+		odd = odd.Next
+		even = even.Next
+	}
+	odd.Next = evenHead
+	return head
+
 }
