@@ -3,18 +3,17 @@ package main
 import (
 	"fmt"
 
-	linkedlist "github.com/dsa/problems/linked-list"
-	deletenode "github.com/dsa/problems/linked-list/delete-node"
+	"github.com/dsa/problems/implementations"
 )
 
 func main() {
-	input := []int{2, 4, 6, 8, 10, 12}
-	head := linkedlist.ArrToLinkedList(input)
+	//input := []int{2, 4, 6, 8, 10, 12}
+	//head := linkedlist.ArrToLinkedList(input)
 
 	//	head = linkedlist.InsertAtEnd(head, 9)
-	linkedlist.PrintLinkedList(head)
-	x := linkedlist.LengthOfLinkedList(head)
-	fmt.Println(x)
+	//	linkedlist.PrintLinkedList(head)
+	//	x := linkedlist.LengthOfLinkedList(head)
+	//	fmt.Println(x)
 	//	head = deletenode.DeleteHead(head)
 	//	linkedlist.PrintLinkedList(head)
 	//	fmt.Println("deleting a tail of linked list")
@@ -23,14 +22,39 @@ func main() {
 	//	if err != nil {
 	//		println("linked list is empty")
 	//	}
-	NodeTobedeleted, err := linkedlist.Search(head, 10)
-	if err != nil {
-		fmt.Println("linked list is empty")
+	//	NodeTobedeleted, err := linkedlist.Search(head, 10)
+	//	if err != nil {
+	//		fmt.Println("linked list is empty")
 
-	}
+	//	}
 
-	deletenode.DeleteNode(NodeTobedeleted)
+	//	deletenode.DeleteNode(NodeTobedeleted)
+	//
 	// printing linked list after deelting 10 let's see
-	linkedlist.PrintLinkedList(head)
+	//
+	//	linkedlist.PrintLinkedList(head)
+	//	strings.ReverseString("the sky is blue")
+	//	area := stack.LargestRectangle([]int{2, 1, 5, 6, 2, 3})
+	//	fmt.Println("area", area)
+	//mock := []int{1, 3, -1, -3, 5, 3, 6, 7}
+	//ans := stack.MaxSlidingWindow(mock, 3)
+	//fmt.Println(ans)
+	//newNode.PrintLinkedList()a
+	//
+	lru := implementations.NewLruCacheWithCapacity(2)
+	lru.Put(1, 1)
+	lru.Put(2, 2)
+
+	fmt.Println(lru.Get(1))
+
+	lru.Put(3, 3)
+
+	fmt.Println(lru.Get(2))
+
+	lru.Put(4, 4)
+
+	fmt.Println(lru.Get(1))
+	fmt.Println(lru.Get(3))
+	fmt.Println(lru.Get(4))
 
 }
