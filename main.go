@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/dsa/heap"
 	"github.com/dsa/problems/implementations"
 )
 
@@ -56,5 +57,18 @@ func main() {
 	fmt.Println(lru.Get(1))
 	fmt.Println(lru.Get(3))
 	fmt.Println(lru.Get(4))
+
+	maxHeap := heap.NewMaxArrayHeap()
+	maxHeap.Insert(50)
+	maxHeap.Insert(55)
+	maxHeap.Insert(53)
+	maxHeap.Insert(52)
+	maxHeap.Insert(54)
+	maxHeap.Print()
+
+	fmt.Println("AFTER DELETING ROOT NODE")
+
+	maxHeap.Delete()
+	maxHeap.Print()
 
 }
