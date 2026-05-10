@@ -71,4 +71,14 @@ func main() {
 	maxHeap.Delete()
 	maxHeap.Print()
 
+	arr := []int{-1, 26, 23, 24, 30, 35, 40}
+
+	for i := len(arr) / 2; i > 0; i-- {
+		heap.Heapify(arr, len(arr), i)
+	}
+
+	for _, val := range arr {
+		fmt.Println(val)
+	}
+
 }
