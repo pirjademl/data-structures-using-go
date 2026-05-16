@@ -5,8 +5,8 @@ import "cmp"
 func Heapify[T cmp.Ordered](arr []T, n, i int) {
 	largest := i
 
-	leftIndex := 2 * largest
-	rightIndex := 2*largest + 1
+	leftIndex := 2*largest + 1
+	rightIndex := 2*largest + 2
 
 	if leftIndex < n && arr[largest] <= arr[leftIndex] {
 		largest = leftIndex
